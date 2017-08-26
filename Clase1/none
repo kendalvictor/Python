@@ -1,1 +1,14 @@
 
+a=input("Ingrese valor :" )
+print a
+
+#%%
+
+num1=input("Ingrese Numero 1: ")
+num2=input("Ingrese Numero 2: ")
+
+print "el resultado es ", num1 + num2
+
+#%%
+
+
