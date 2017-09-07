@@ -1,0 +1,18 @@
+1:Diseña un programa que muestre la cantidad de números que aparecen en una cadena leída de teclado. ¡Ojo! Con
+número no queremos decir dígito, sino número propiamente dicho, es decir, secuencia de dígitos. La cadena ’un 1, un 201 y 2 uno
+por ejemplo, tiene 3 números: el 1, el 201 y el 2.
+
+2:Un texto está bien parentizado si por cada paréntesis abierto hay otro mas adelante que lo cierra. Por ejemplo, la
+cadena
+’Esto (es (un) (ejemplo (de) ((cadena) bien)) parentizada).’
+esta bien parentizada, pero no lo estan estas otras:
+’una cadena)’ ’(una cadena’ ’(una (cadena)’ ’)una( cadena’
+
+3:Diseña un programa que convierta una cadena de digitos entre el <<0>> y el <<7>> al valor correspondiente a una
+interpretacion de dicha cadena como numero en base octal.
+
+4:Diseña un programa que convierta una cadena de digitos o letras entre la <<a>> y la <<f>> al valor correspondiente a
+una interpretacion de dicha cadena como numero en base hexadecimal.
+
+5:Ingresa 50 numeros aleatorios de 0 a 20 ,mostrar en consola los numeros unicos,sin que se repita.
+
