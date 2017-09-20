@@ -14,15 +14,12 @@ gz=0
 #INCIO DE LA COMUNICACION SERIAL 
 comuni=serial.Serial('COM5',9600,timeout=1)
 time.sleep(1.8) #PAUSA DE 1.8 SEGUNDOS
- 
+
+
 def  acelerometro(data1):
-    salida=[0,0,0]    
-    data=data1[1:4]
-    salida[0]=round(float(data[0])*9.81/16384,2)
-    salida[1]=round(float(data[1])*9.81/16384,2)
-    salida[2]=round(float(data[2])*9.81/16384,2)
-    return salida
- 
+    return [round(float(dat)*9.81/16384,2) for dat in data1[1:4]]
+
+
 for i in range(15): #se repetira 100 veces
     comuni.write('x')
     data=comuni.readline()
@@ -32,18 +29,19 @@ for i in range(15): #se repetira 100 veces
     time.sleep(0.1) #time.sleep(segundos)
     acelerometro=acelerometro(data)
     #funcion giroscopio
-    ay=np.arctan2(float(data[1]),np.sqrt(float(data[2])**2+float(data[3])**2)) *180/np.pi
+    ay=np.arctan2(
+        float(data[1]),np.sqrt(float(data[2])**2+float(data[3])**2)
+    ) *180/np.pi
  
-    ax=np.arctan2(float(data[1]),np.sqrt(float(data[1])**2+float(data[3])**2))*180/np.pi        
+    ax=np.arctan2(
+        float(data[1]),np.sqrt(float(data[1])**2+float(data[3])**2)
+    )*180/np.pi
   
     gx = gx + float(data[4]) / 30.0
     gy = gy - float(data[5]) / 30.0
     gz = gz + float(data[6]) / 30.0
 
- 
- 
     gx = gx * 0.96 + ax * 0.04
-  
     gy = gy * 0.96 + ay * 0.04  
     
     print gx," ",gy
